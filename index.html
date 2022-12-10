@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Acronymizer</h1>
+        <input id="input" placeholder="who hides outside" pattern="([A-Z a-z])+"></input>
+        <div style="font-size: 10px; color: #ffffff80;">Press enter to generate acronyms</div>
+        <div id="here"></div>
+    </body>
+    <script defer="true" type="module">
+            import { words } from "./words.js"
+            function make(){
+                var args = document.getElementById('input').value
+                var arr = args.split(' ')
+                var initials = []
+                arr.forEach(word => {
+                    initials += word.split('')[0]
+                });
+                var valid = words.filter(word => {
+                    return word.length === initials.length &&
+                    word.split('').every(letter => {return initials.includes(letter)}) &&
+                    initials.split('').every(letter => {return word.includes(letter)})
+                })
+                if(args !== ""){ document.getElementById('here').innerHTML = valid.join(", ") ? valid.join(", ") : `¯\\_(ツ)_/¯` } else {
+                    document.getElementById('here').innerHTML = "(ノಠ益ಠ)ノ彡┻━┻"
+                }
+            }
+            document.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    make()
+                }
+            });
+        </script>
+</html>

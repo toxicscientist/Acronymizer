@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+    background-color: #1b1b1b;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+}
+
+input{
+    background-color: #182631;
+    color: #cdcdcd;
+    font-family: "Open Sans", sans-serif;
+
+    width: 40%;
+    height: 40%;
+
+    border-color: #696969;
+    border-style: thin thin thin;
+    border-left: thick solid #5e9eff;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: none;
+    border: none none none;
+}
+
+div{
+    font-family: "Open Sans", sans-serif;
+}
