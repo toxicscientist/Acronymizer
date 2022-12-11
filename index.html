@@ -14,6 +14,7 @@
         <div id="here"></div>
     </body>
     <script defer="true" type="module">
+        //--------------------------Makes the placeholder---------------------------//
         function choose(arr){
             return arr[Math.round(Math.random() * (arr.length - 1))];
         }
@@ -26,7 +27,7 @@
             "Keep It Simple, Stupid",
         ]
         document.getElementById('input').placeholder = choose(acronyms)
-        //-----------------------------------------------------//
+        //--------------------------Makes the acronyms---------------------------//
         import { words } from "./words.js"
         function make(){
             var args = document.getElementById('input').value
