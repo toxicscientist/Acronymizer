@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+.dance::before {
+    content: "\\(^ω^\\)";
+    animation: dance infinite 1s;
+    padding-left: 10px;
+}
+
 body{
     background-color: #1b1b1b;
     color: #ffffff;
@@ -27,4 +33,13 @@ input:focus{
 
 div{
     font-family: "Open Sans", sans-serif;
+}
+
+@keyframes dance {
+    0% {
+        content: "\\(^ω^\\)";
+    }
+    50% {
+        content: "(/^ω^)/";
+    }
 }
